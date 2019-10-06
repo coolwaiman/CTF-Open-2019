@@ -102,4 +102,29 @@ http://47.56.124.67/?username=orange~~~~' or '1' = '1' union select table_name f
 > ### Secret Image 2 [350pt, 0/12 Solves]
 > Can you find the flag encoded inside the image?
 
+## Reverse Engineering
+> ### Simple APK [100pt, 10/12 Solves]
+> Find the flag in the APK
+
+> ### Basic Assembly [125pt, 6/12 Solves]
+> My friend agreed to buy me a lunch if I know the value of EAX in the file. Can you help me?
+> 
+> Please submit the flag as a hexadecimal value in the format of HKCTF{0x}.
+
+> ### Secret in Android App 1 [125pt, 11/12 Solves]
+> Something interested is stored in the Android app. But I can't find it because I don't know the PIN. Can you help me?
+
+> ### Secret in Android App 2 [250pt, 0/12 Solves]
+> The protection method changed. Can you find the flag this time?
+
+## Misc
+> ### Bit Key [50pt, 10/12 Solves]
+> Can you find the password to gain access from the script?
+
+> ### Spider man [125pt, 1/12 Solves]
+> Where the spider can't access, where the answer is.
+>
+> Please access it on http://13.251.58.69:8003
+
+
 
