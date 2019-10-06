@@ -28,6 +28,9 @@
 
 > ### Mersenne 16 [400pt, 0/12 Solves]
 > Is it possible to decrypt the message using public key?
+>
+> #### Idea
+> - The n is abled to facter using the FacterDB, the public key is found but we failed to decrypt the file. We don't know why.
 
 > ### RSA 2 [450pt, 9/12 Solves]
 > The customer fixed the previous issue. Can you decrypt the message this time?
@@ -95,9 +98,30 @@ http://47.56.124.67/?username=orange~~~~' or '1' = '1' union select table_name f
 
 > ### Broken string [125pt, 3/12 Solves]
 > My secret string was broken because of fire. Can you help to decode?
+>
+> #### Idea
+> - The text on image look like base64 encoded
+> - Try decode substring on the image and guess the flag
 
 > ### Secret Image 1 [125pt, 1/12 Solves]
 > Can you find the flag encoded inside the image?
+>
+> #### Tag
+> **Stegsolve**, **LSB**
+> #### Idea
+> - No hidden file using Binwalk
+> - Weird horizontal line when put it in the Stegsolve (Random color map, RGB alpha plane 0)
+> - Try extract data using Stegsolve
+> 
+> #### Writeup
+> - Try different settings on Data Extract in Stegsolve
+> - A Base64 string `SEtDVEZ7TTNzc0BnM19oMWRkM25faW5fZHJAZzBuXzA4MTNkNmF9` was found with this 'Data Extract' settings: 
+>   - Alpha: Untick, Red: 0, Green: 0, Blue: 0
+>   - Extract By: Column
+>   - Bit Order: LSB First
+>   - Bit Plane Order: RBG
+> - Decode the base64 and get the flag
+
 
 > ### Secret Image 2 [350pt, 0/12 Solves]
 > Can you find the flag encoded inside the image?
