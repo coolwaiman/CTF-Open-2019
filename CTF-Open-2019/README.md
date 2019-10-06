@@ -64,7 +64,7 @@
 >Please access it on http://13.251.58.69:8004
 >
 > #### Idea
->
+
 > ### Unbreakable WAF [400pt, 1/12 Solves]
 > Is this really an unbreakable Cloud WAF? Please access http://47.56.124.67/.
 >
