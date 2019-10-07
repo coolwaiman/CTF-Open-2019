@@ -1,4 +1,4 @@
-# CTF-Open-2019
+# CTF-Open-2019 Student
 
 
 # Crpyto
