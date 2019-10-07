@@ -10,6 +10,15 @@
 ## Simple Crypto 2 [100pt, 12/12 Solves]
 > I got another message from a friend, wzr%uL>6DD28606?4CJAE650FD:?80C@EcfN. Can you help me to decrypt it this time?
 
+### Idea
+- Assume wzr%uL = HKCTF
+- Translate HKCTF and wzr%u into ASCII form
+
+### Writeup
+- The ASCII in dec has shifted 47 position
+- It used ROT47 encode
+- Put it in https://www.dcode.fr/rot-cipher to decode the message
+
 ## Protect [100pt, 7/12 Solves]
 > The message is encrypted with a password with the provided script! Can you get us the password?
 
